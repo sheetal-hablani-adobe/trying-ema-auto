@@ -1,0 +1,85 @@
+.tabs .tabs-list {
+  display: flex;
+  gap: 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.tabs .tabs-list button {
+  flex: 0 0 max-content;
+  margin: 0;
+  padding: 0.5em 1em;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: unset;
+  text-align: initial;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tabs .tabs-list button p {
+  margin: 0;
+}
+
+.tabs .tabs-list button[aria-selected='true'] {
+  cursor: default;
+}
+
+.tabs .tabs-panel {
+  padding-top: 1em;
+  overflow: auto;
+}
+
+.tabs .tabs-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.tabs .tabs-panel img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* card-grid: filter tabs over a grid of image cards */
+.tabs.card-grid .tabs-list {
+  flex-wrap: wrap;
+  overflow-x: visible;
+}
+
+.tabs.card-grid .tabs-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px 16px;
+}
+
+.tabs.card-grid .tabs-card-image {
+  line-height: 0;
+}
+
+.tabs.card-grid .tabs-card-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.tabs.card-grid .tabs-card-body > * {
+  margin: 8px 0 0;
+}
+
+.tabs.card-grid .tabs-card-body p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (width >= 900px) {
+  .tabs.card-grid .tabs-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

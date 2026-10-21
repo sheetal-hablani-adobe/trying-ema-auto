@@ -1,0 +1,14 @@
+{
+  "sites": {
+    "trying-ema-auto": {
+      "previewOrg": "sheetal-hablani-adobe",
+      "previewSite": "trying-ema-auto",
+      "contentHostUrl": "https://content.da.live/sheetal-hablani-adobe/trying-ema-auto/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  },
+  "features": [
+    "site-planning"
+  ],
+  "type": "da"
+}

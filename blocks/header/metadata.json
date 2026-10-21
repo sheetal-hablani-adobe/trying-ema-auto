@@ -1,0 +1,25 @@
+{
+  "variantName": "header",
+  "baseBlock": "header",
+  "canonicalModel": "configuration",
+  "visualCharacteristics": {
+    "colorScheme": "mixed",
+    "complexity": "advanced",
+    "density": "moderate",
+    "purpose": "global site header and navigation"
+  },
+  "contentPattern": {
+    "structure": "loaded from the /nav fragment; sections: brand, navigation sections, tools"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "header-global"
+  ],
+  "usage": {
+    "pageCount": 1,
+    "examplePages": [
+      "https://wknd.site/ca/en/magazine.html"
+    ]
+  },
+  "reuseGuidance": "Global; authored once in /nav."
+}

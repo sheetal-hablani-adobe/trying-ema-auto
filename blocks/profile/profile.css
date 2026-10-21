@@ -1,0 +1,78 @@
+/* default: centred card (photo, name, roles, social bar) */
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+.profile .profile-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.profile .profile-photo {
+  line-height: 0;
+}
+
+.profile .profile-photo img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile .profile-info > * {
+  margin: 0;
+}
+
+.profile .profile-info > * + * {
+  margin-top: 8px;
+}
+
+.profile .profile-social {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 8px 12px;
+  gap: 16px;
+  background-color: var(--dark-color, #202020);
+}
+
+.profile .profile-social a {
+  display: block;
+  padding: 4px;
+  color: var(--background-color);
+}
+
+/* byline: horizontal author row above a divider */
+.profile.byline {
+  display: block;
+  padding-top: 32px;
+  border-top: 1px solid #dadada;
+}
+
+.profile.byline .profile-item {
+  flex-flow: row wrap;
+  text-align: start;
+}
+
+.profile.byline .profile-photo img {
+  width: 60px;
+  height: 60px;
+}
+
+.profile.byline .profile-info {
+  flex: 1 1 auto;
+}
+
+.profile.byline .profile-info > * + * {
+  margin-top: 4px;
+}
+
+.profile.byline .profile-social {
+  margin-inline-start: auto;
+}

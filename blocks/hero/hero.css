@@ -1,3 +1,4 @@
+/* default: full-bleed image with an overlapping text card */
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -5,33 +6,76 @@
 
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
 }
 
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+.hero .hero-image {
+  line-height: 0;
 }
 
-.hero picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+.hero .hero-image picture {
+  display: block;
 }
 
-.hero img {
-  object-fit: cover;
+.hero .hero-image img {
+  display: block;
   width: 100%;
-  height: 100%;
+  min-height: 300px;
+  max-height: 640px;
+  object-fit: cover;
+}
+
+.hero .hero-content {
+  position: relative;
+  box-sizing: border-box;
+  margin: -64px 16px 0;
+  padding: 24px;
+  background-color: var(--background-color);
+}
+
+.hero .hero-content > :first-child {
+  margin-top: 0;
+}
+
+.hero .hero-content > :last-child {
+  margin-bottom: 0;
+}
+
+.hero.no-image .hero-content {
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 @media (width >= 900px) {
-  .hero {
-    padding: 40px 32px;
+  .hero .hero-content {
+    width: calc(100% - 128px);
+    max-width: 1200px;
+    margin: -180px auto 0;
+    padding: 32px;
+  }
+}
+
+/* image-only: plain content-width image banner, no overlay */
+.hero-container .hero-wrapper:has(.hero.image-only) {
+  max-width: 1200px;
+  padding: 0 24px;
+}
+
+.hero.image-only .hero-image img {
+  min-height: 0;
+  max-height: none;
+  height: auto;
+}
+
+.hero.image-only .hero-content {
+  width: auto;
+  max-width: none;
+  margin: 16px 0 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+@media (width >= 900px) {
+  .hero-container .hero-wrapper:has(.hero.image-only) {
+    padding: 0 32px;
   }
 }

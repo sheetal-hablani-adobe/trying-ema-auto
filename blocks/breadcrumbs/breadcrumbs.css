@@ -1,0 +1,33 @@
+.breadcrumbs .breadcrumbs-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5em 1em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumbs .breadcrumbs-item {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.breadcrumbs .breadcrumbs-item + .breadcrumbs-item::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.35em 0 0.35em 0.6em;
+  border-color: transparent transparent transparent currentcolor;
+}
+
+.breadcrumbs .breadcrumbs-item a {
+  text-decoration: none;
+}
+
+.breadcrumbs .breadcrumbs-item [aria-current='page'] {
+  font-weight: normal;
+}

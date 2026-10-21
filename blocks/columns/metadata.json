@@ -1,0 +1,29 @@
+{
+  "variantName": "columns",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "image + eyebrow + heading + text + CTA",
+    "purpose": "homepage Featured Article teaser: large image left, grey panel right with eyebrow, heading, text and CTA button"
+  },
+  "contentPattern": {
+    "structure": "one row, two cells: image cell | text cell (eyebrow paragraph, heading, paragraph, CTA link)"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "v_21e396a26423"
+  ],
+  "usage": {
+    "pageCount": 2,
+    "examplePages": [
+      "https://wknd.site/ca/en.html",
+      "https://wknd.site/us/en.html"
+    ]
+  },
+  "reuseGuidance": "Use for side-by-side image and text content. Boilerplate columns block; an image-only cell is tagged columns-img-col and stacks first on mobile."
+}

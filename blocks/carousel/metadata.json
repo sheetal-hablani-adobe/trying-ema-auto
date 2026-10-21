@@ -1,0 +1,47 @@
+{
+  "variantName": "carousel",
+  "baseBlock": "carousel",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "2 CTAs + 3 images + list (default); heading + text + 2 CTAs + 3 images + list (hero)",
+    "purpose": "image slider with dot indicators and prev/next controls; image-only on adventure detail pages, image + overlapping text card on homepages (hero)"
+  },
+  "contentPattern": {
+    "structure": "one row per slide: image cell, optional content cell (heading, text, CTAs)",
+    "default": "image-only cell per row (adventure detail pages)",
+    "hero": "image cell + content cell (heading, paragraph, CTA link) rendered as a card overlapping the bottom of the image"
+  },
+  "options": [
+    {
+      "class": "hero",
+      "label": "Hero"
+    }
+  ],
+  "memberVariantIds": [
+    "v_85f1e746e380",
+    "v_85f1e746e380-2",
+    "v_85f1e746e380-1",
+    "v_85f1e746e380-3"
+  ],
+  "usage": {
+    "pageCount": 34,
+    "examplePages": [
+      "https://wknd.site/ca/en/adventures/bali-surf-camp.html",
+      "https://wknd.site/ca/en/adventures/colorado-rock-climbing.html",
+      "https://wknd.site/ca/en/adventures/cycling-southern-utah.html",
+      "https://wknd.site/ca/en/adventures/gastronomic-marais-tour.html",
+      "https://wknd.site/ca/en/adventures/tahoe-skiing.html"
+    ],
+    "pagesUsing": [
+      "/us/en/adventures/bali-surf-camp"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-21T00:00:00.000Z"
+  },
+  "reuseGuidance": "Use for 2+ rotating images or slides. A single row renders a static slide without controls. Add the hero option for homepage-style slides where each row has an image cell plus a text cell (heading, paragraph, CTA)."
+}

@@ -1,0 +1,37 @@
+{
+  "variantName": "breadcrumbs",
+  "baseBlock": "breadcrumbs",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "list",
+    "purpose": "hierarchical navigation trail at the top of adventure and magazine detail pages"
+  },
+  "contentPattern": {
+    "structure": "one cell containing a list of links (ancestor pages) optionally followed by the current page title as plain text; leave empty to derive the trail from the URL path"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "v_4d46829f22d9"
+  ],
+  "usage": {
+    "pageCount": 44,
+    "examplePages": [
+      "https://wknd.site/ca/en/adventures/bali-surf-camp.html",
+      "https://wknd.site/ca/en/adventures/beervana-portland.html",
+      "https://wknd.site/ca/en/adventures/climbing-new-zealand.html",
+      "https://wknd.site/ca/en/adventures/colorado-rock-climbing.html",
+      "https://wknd.site/ca/en/adventures/cycling-southern-utah.html"
+    ],
+    "pagesUsing": [
+      "/us/en/adventures/bali-surf-camp"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-21T00:00:00.000Z"
+  },
+  "reuseGuidance": "Place once near the top of detail pages. Author links explicitly when the URL structure does not match the desired trail."
+}

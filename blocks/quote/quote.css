@@ -1,0 +1,35 @@
+.quote .quote-figure {
+  margin: 0;
+}
+
+.quote blockquote {
+  margin: 0;
+  padding: 0 1.5em;
+}
+
+.quote .quote-quotation > :first-child {
+  margin-top: 0;
+}
+
+.quote .quote-quotation > :last-child {
+  margin-bottom: 0;
+}
+
+.quote .quote-attribution {
+  padding: 0 1.5em;
+}
+
+.quote .quote-attribution > :first-child::before {
+  content: '—';
+  padding-right: 0.5ch;
+}
+
+.quote .quote-image {
+  margin-top: 1em;
+}
+
+.quote .quote-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

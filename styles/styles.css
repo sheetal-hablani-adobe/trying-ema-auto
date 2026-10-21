@@ -317,6 +317,29 @@ main > .section:first-of-type {
 }
 
 /* section metadata */
+
+/* split: default content beside the block on desktop, stacked on mobile */
+@media (width >= 900px) {
+  main > .section.split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    gap: 32px;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 32px;
+  }
+
+  main > .section.split > div {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  main > .section.split > div:only-child {
+    grid-column: 1 / -1;
+  }
+}
+
 main .section.light,
 main .section.highlight {
   background-color: var(--light-color);

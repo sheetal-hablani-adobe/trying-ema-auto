@@ -1,0 +1,32 @@
+{
+  "variantName": "quote",
+  "baseBlock": "quote",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + image",
+    "purpose": "pull quote with an accompanying large image in magazine articles"
+  },
+  "contentPattern": {
+    "structure": "row 1: quotation text; row 2 (optional): attribution, italic text becomes a citation; an image-only cell anywhere becomes the quote image"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "v_b7118a52fdcc",
+    "v_b7118a52fdcc-1"
+  ],
+  "usage": {
+    "pageCount": 4,
+    "examplePages": [
+      "https://wknd.site/ca/en/magazine/arctic-surfing.html",
+      "https://wknd.site/us/en/magazine/arctic-surfing.html",
+      "https://wknd.site/ca/en/magazine/ski-touring.html",
+      "https://wknd.site/us/en/magazine/ski-touring.html"
+    ]
+  },
+  "reuseGuidance": "Use for highlighted quotations inside long-form content."
+}

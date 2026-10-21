@@ -1,0 +1,34 @@
+{
+  "variantName": "accordion",
+  "baseBlock": "accordion",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "heading + text + 7 CTAs",
+    "purpose": "expandable FAQ-style question/answer list"
+  },
+  "contentPattern": {
+    "structure": "one row per item: label cell (question) | body cell (answer)"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "v_4ecd3661fdd5"
+  ],
+  "usage": {
+    "pageCount": 2,
+    "examplePages": [
+      "https://wknd.site/ca/en/faqs.html",
+      "https://wknd.site/us/en/faqs.html"
+    ],
+    "pagesUsing": [
+      "/us/en/faqs"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-21"
+  },
+  "reuseGuidance": "Use for any list of collapsible label/body pairs (FAQs, details). Do not use for tabbed panels; use tabs."
+}

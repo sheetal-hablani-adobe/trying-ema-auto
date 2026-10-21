@@ -1,0 +1,39 @@
+{
+  "variantName": "profile",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "round photo + name + roles + social links",
+    "purpose": "default: centred person card (round photo, name, roles, dark social-icon bar) for the About Us team; byline: horizontal author row (photo, name + role left, social icons right) above a divider on articles"
+  },
+  "contentPattern": {
+    "structure": "one row per person: photo cell | details cell (name heading, roles paragraph, social links)",
+    "default": "centred card, items stacked",
+    "byline": "single row laid out horizontally with a divider above"
+  },
+  "options": [
+    {
+      "class": "byline",
+      "label": "Byline"
+    }
+  ],
+  "memberVariantIds": [
+    "v_04d141a53172",
+    "v_ea9fb06fced2",
+    "v_3811f488627e"
+  ],
+  "usage": {
+    "pageCount": 14,
+    "examplePages": [
+      "https://wknd.site/us/en/about-us.html",
+      "https://wknd.site/ca/en/about-us.html",
+      "https://wknd.site/ca/en/magazine/arctic-surfing.html"
+    ]
+  },
+  "reuseGuidance": "Use for a person: team member card (default) or article author byline (byline). Social links are detected by domain (facebook, twitter/x, instagram, linkedin, youtube, ...) or by being in a list."
+}

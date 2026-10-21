@@ -1,0 +1,46 @@
+{
+  "variantName": "hero",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + text + CTA + image (default); image (image-only)",
+    "purpose": "default: full-width image with an overlapping white text card (homepage, Adventures and Magazine listings); image-only: plain content-width image banner (FAQ and article pages)"
+  },
+  "contentPattern": {
+    "structure": "single row: image cell, optional content cell (heading, text, CTA). Image and text may also share one cell or sit in separate rows.",
+    "default": "image + heading, paragraph and CTA link rendered as a card overlapping the bottom of the image",
+    "image-only": "image only; any text renders plainly below the image"
+  },
+  "options": [
+    {
+      "class": "image-only",
+      "label": "Image Only"
+    }
+  ],
+  "memberVariantIds": [
+    "v_dc85ed9612bf",
+    "v_64d7a45c1296",
+    "v_ce80ccd0f1fa"
+  ],
+  "usage": {
+    "pageCount": 32,
+    "examplePages": [
+      "https://wknd.site/ca/en/faqs.html",
+      "https://wknd.site/ca/en/magazine/arctic-surfing.html",
+      "https://wknd.site/ca/en/magazine/guide-la-skateparks.html",
+      "https://wknd.site/ca/en/magazine/members-only/alaskan-adventure.html",
+      "https://wknd.site/ca/en/magazine/members-only/fly-fishing-the-amazon.html"
+    ],
+    "pagesUsing": [
+      "/us/en/faqs"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-21"
+  },
+  "reuseGuidance": "Use once at the top of a page. Default = image with overlapping text card; add image-only for a plain content-width image banner with no text."
+}

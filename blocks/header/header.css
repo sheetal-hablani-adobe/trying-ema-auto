@@ -1,3 +1,8 @@
+/* header block root (loaded into <header> by loadHeader) */
+header .header {
+  display: block;
+}
+
 /* header and nav layout */
 header .nav-wrapper {
   background-color: var(--background-color);

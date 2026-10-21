@@ -1,0 +1,50 @@
+{
+  "variantName": "tabs",
+  "baseBlock": "tabs",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + text + image + list",
+    "purpose": "default: tabbed content panels (Overview / Itinerary / What to bring) on adventure detail pages; card-grid: category filter tabs over a 4-column grid of adventure cards (Adventures listing)"
+  },
+  "contentPattern": {
+    "structure": "one row per tab: label cell | panel cell(s) (heading, text, images, lists)",
+    "default": "panel content rendered as authored",
+    "card-grid": "panel cell holds the cards for that category: either a list whose items each hold image + title + description, or a sequence where each image starts a new card followed by its title and description"
+  },
+  "options": [
+    {
+      "class": "card-grid",
+      "label": "Card Grid"
+    }
+  ],
+  "memberVariantIds": [
+    "v_ce821482035f",
+    "v_8ab7ece34e9a-1",
+    "v_8ab7ece34e9a-2",
+    "v_8ab7ece34e9a-4",
+    "v_8ab7ece34e9a",
+    "v_8ab7ece34e9a-3",
+    "v_e0f5a3e4d7c8"
+  ],
+  "usage": {
+    "pageCount": 34,
+    "examplePages": [
+      "https://wknd.site/ca/en/adventures/bali-surf-camp.html",
+      "https://wknd.site/ca/en/adventures/colorado-rock-climbing.html",
+      "https://wknd.site/ca/en/adventures/cycling-southern-utah.html",
+      "https://wknd.site/ca/en/adventures/gastronomic-marais-tour.html",
+      "https://wknd.site/ca/en/adventures/napa-wine-tasting.html"
+    ],
+    "pagesUsing": [
+      "/us/en/adventures/bali-surf-camp"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-21T00:00:00.000Z"
+  },
+  "reuseGuidance": "Use for 2+ peer content panels where only one is visible at a time. Adventure stats sidebar is separate content, not part of the tabs block. Add card-grid when each tab filters a grid of image cards."
+}

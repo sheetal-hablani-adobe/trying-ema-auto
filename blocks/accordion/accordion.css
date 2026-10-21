@@ -1,0 +1,48 @@
+.accordion details {
+  border-bottom: 1px solid currentcolor;
+}
+
+.accordion details summary {
+  position: relative;
+  padding: 0.75em 3em 0.75em 0;
+  list-style: none;
+  cursor: pointer;
+}
+
+.accordion details summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion details summary > :first-child {
+  margin-top: 0;
+}
+
+.accordion details summary > :last-child {
+  margin-bottom: 0;
+}
+
+/* plus / minus indicator */
+.accordion details summary::before,
+.accordion details summary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0.5em;
+  width: 1em;
+  height: 2px;
+  background-color: currentcolor;
+  transform: translateY(-50%);
+  transition: transform 0.2s;
+}
+
+.accordion details summary::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.accordion details[open] summary::after {
+  transform: translateY(-50%) rotate(0deg);
+}
+
+.accordion details .accordion-item-body {
+  padding-bottom: 0.75em;
+}

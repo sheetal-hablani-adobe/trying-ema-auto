@@ -1,0 +1,42 @@
+{
+  "variantName": "cards",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "5 images + list",
+    "purpose": "default: 4-column grid of image cards with uppercase title and short description; locked: members-only article teasers (faded card, yellow lock badge, title, subtitle, Read more button, image)"
+  },
+  "contentPattern": {
+    "structure": "one row per card: image cell | body cell (heading, text, link)",
+    "default": "image above body",
+    "locked": "same cells; body (title, subtitle, Read more link) renders above the image, card is faded and gets a lock badge"
+  },
+  "options": [
+    {
+      "class": "locked",
+      "label": "Locked"
+    }
+  ],
+  "memberVariantIds": [
+    "v_096172ab7f4e",
+    "v_6743ad78580a",
+    "v_ad4d0005c9f6",
+    "v_f2228ac5d8a1",
+    "v_9f1b9f67bda6"
+  ],
+  "usage": {
+    "pageCount": 4,
+    "examplePages": [
+      "https://wknd.site/ca/en/magazine.html",
+      "https://wknd.site/us/en/magazine.html",
+      "https://wknd.site/ca/en.html",
+      "https://wknd.site/us/en.html"
+    ]
+  },
+  "reuseGuidance": "Use for repeating image + text teasers. Add locked for members-only teasers that should look unavailable."
+}

@@ -1,0 +1,25 @@
+{
+  "variantName": "footer",
+  "baseBlock": "footer",
+  "canonicalModel": "configuration",
+  "visualCharacteristics": {
+    "colorScheme": "mixed",
+    "complexity": "simple",
+    "density": "moderate",
+    "purpose": "global site footer"
+  },
+  "contentPattern": {
+    "structure": "loaded from the /footer fragment; sections authored as default content (links, social, copyright)"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "footer-global"
+  ],
+  "usage": {
+    "pageCount": 1,
+    "examplePages": [
+      "https://wknd.site/ca/en/magazine.html"
+    ]
+  },
+  "reuseGuidance": "Global; authored once in /footer."
+}

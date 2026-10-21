@@ -1,0 +1,28 @@
+{
+  "variantName": "search",
+  "baseBlock": "search",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "text + 5 CTAs + list",
+    "purpose": "site search input with live results from the query index"
+  },
+  "contentPattern": {
+    "structure": "optional link to a JSON query index (defaults to /query-index.json) and optional placeholder text"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "v_9f1b9f67bda6-1"
+  ],
+  "usage": {
+    "pageCount": 1,
+    "examplePages": [
+      "https://wknd.site/us/en/ai-powered-search.html"
+    ]
+  },
+  "reuseGuidance": "Use on a dedicated search page. The source AI-summary toggle is not reproduced; it needs a backend."
+}

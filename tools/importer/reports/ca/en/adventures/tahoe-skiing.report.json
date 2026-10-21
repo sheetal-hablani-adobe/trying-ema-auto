@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://wknd.site/ca/en/adventures/tahoe-skiing.html",
+  "path": "ca/en/adventures/tahoe-skiing",
+  "timestamp": "2026-10-21T03:53:45.557Z",
+  "title": "Tahoe Skiing",
+  "template": "detail-page",
+  "blocks": [
+    "breadcrumbs",
+    "carousel",
+    "tabs"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://wknd.site/ca/en/adventures/west-coast-cycling.html",
+  "path": "ca/en/adventures/west-coast-cycling",
+  "timestamp": "2026-10-21T03:53:51.463Z",
+  "title": "West Coast Cycling",
+  "template": "detail-page",
+  "blocks": [
+    "breadcrumbs",
+    "carousel",
+    "tabs"
+  ]
+}

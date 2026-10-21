@@ -36,8 +36,8 @@
   --heading-font-size-s: 24px;
   --heading-font-size-xs: 22px;
 
-  /* nav height */
-  --nav-height: 64px;
+  /* nav height: 25px utility bar + 92px main bar */
+  --nav-height: 117px;
 }
 
 /* fallback fonts */
@@ -55,6 +55,9 @@
 
 @media (width >= 900px) {
   :root {
+    /* nav height: 25px utility bar + 169px main bar */
+    --nav-height: 194px;
+
     /* body sizes */
     --body-font-size-m: 18px;
     --body-font-size-s: 16px;
@@ -86,6 +89,33 @@ body.appear {
 
 header {
   height: var(--nav-height);
+}
+
+/* mobile nav drawer pushes the page aside (as on the source); no effect on desktop */
+main,
+footer {
+  transition: transform 0.5s;
+}
+
+body.nav-panel-visible {
+  overflow-x: hidden;
+}
+
+body.nav-panel-visible main,
+body.nav-panel-visible footer {
+  transform: translateX(275px);
+}
+
+@media (width >= 900px) {
+  main,
+  footer {
+    transition: none;
+  }
+
+  body.nav-panel-visible main,
+  body.nav-panel-visible footer {
+    transform: none;
+  }
 }
 
 header .header,

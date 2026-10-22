@@ -161,3 +161,74 @@
     padding: 24px 28px;
   }
 }
+
+/* default (mini) option: full-bleed 400px slide, centred dots and arrow buttons below it */
+main > .section > .carousel-wrapper:has(> .carousel:not(.hero)) {
+  max-width: none;
+  padding: 0;
+}
+
+.carousel:not(.hero) .carousel-slide .carousel-slide-image img {
+  height: 400px;
+  margin: 7px 0 14px;
+  object-position: center;
+}
+
+.carousel:not(.hero) .carousel-controls {
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 19px;
+  min-height: 0;
+}
+
+.carousel:not(.hero) .carousel-controls nav {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.carousel:not(.hero) .carousel-slide-indicators {
+  margin-top: 9px;
+  gap: 0 14px;
+}
+
+.carousel:not(.hero) .carousel-slide-indicator button {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(175 175 175);
+  opacity: 1;
+}
+
+.carousel:not(.hero) .carousel-slide-indicator button[aria-current='true'] {
+  background-color: rgb(0 0 0 / 80%);
+}
+
+.carousel:not(.hero) .carousel-navigation-buttons {
+  position: static;
+  flex: none;
+  gap: 3.6667px;
+  transform: none;
+}
+
+.carousel:not(.hero) .carousel-navigation-buttons button {
+  width: 26px;
+  height: 24px;
+  margin-right: 13.3333px;
+  color: rgb(0 0 0);
+}
+
+.carousel:not(.hero) .carousel-navigation-buttons button::after {
+  top: 1px;
+  left: 6px;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  background-color: currentcolor;
+  transform: none;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M18.5 10H2M8.5 3.5 2 10l6.5 6.5' fill='none' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E") center / 20px 20px no-repeat;
+}
+
+.carousel:not(.hero) .carousel-navigation-buttons button.slide-next::after {
+  left: 6px;
+  transform: none;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M1.5 10H18M11.5 3.5 18 10l-6.5 6.5' fill='none' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E");
+}

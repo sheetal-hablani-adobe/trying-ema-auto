@@ -4,20 +4,19 @@
       "name": "landing-page",
       "urls": [
         "https://wknd.site/ca/en/about-us.html",
+        "https://wknd.site/ca/en/adventures.html",
         "https://wknd.site/ca/en/magazine.html",
         "https://wknd.site/ca/en/magazine/members-only.html",
         "https://wknd.site/us/en/about-us.html",
-        "https://wknd.site/us/en/ai-powered-search.html",
+        "https://wknd.site/us/en/adventures.html",
         "https://wknd.site/us/en/magazine.html"
       ],
-      "coverageGaps": [],
-      "description": "Section landing page with a hero banner followed by mixed teaser, card and text sections",
+      "description": "Section landing page with a hero banner followed by mixed teaser, tabbed card grid, card and text sections",
       "blocks": []
     },
     {
       "name": "detail-page",
       "urls": [
-        "https://wknd.site/us/en/adventures/bali-surf-camp.html",
         "https://wknd.site/ca/en/adventures/bali-surf-camp.html",
         "https://wknd.site/ca/en/adventures/beervana-portland.html",
         "https://wknd.site/ca/en/adventures/climbing-new-zealand.html",
@@ -34,6 +33,7 @@
         "https://wknd.site/ca/en/adventures/west-coast-cycling.html",
         "https://wknd.site/ca/en/adventures/whistler-mountain-biking.html",
         "https://wknd.site/ca/en/adventures/yosemite-backpacking.html",
+        "https://wknd.site/us/en/adventures/bali-surf-camp.html",
         "https://wknd.site/us/en/adventures/beervana-portland.html",
         "https://wknd.site/us/en/adventures/climbing-new-zealand.html",
         "https://wknd.site/us/en/adventures/colorado-rock-climbing.html",
@@ -50,7 +50,6 @@
         "https://wknd.site/us/en/adventures/whistler-mountain-biking.html",
         "https://wknd.site/us/en/adventures/yosemite-backpacking.html"
       ],
-      "coverageGaps": [],
       "description": "Detail page with breadcrumbs, an image carousel and tabbed content panels",
       "blocks": [
         {
@@ -133,22 +132,11 @@
       ]
     },
     {
-      "name": "listing-page",
-      "urls": [
-        "https://wknd.site/ca/en/adventures.html",
-        "https://wknd.site/us/en/adventures.html"
-      ],
-      "coverageGaps": [],
-      "description": "Listing page with a hero banner and a tabbed, filterable grid of cards",
-      "blocks": []
-    },
-    {
       "name": "faq",
       "urls": [
-        "https://wknd.site/us/en/faqs.html",
-        "https://wknd.site/ca/en/faqs.html"
+        "https://wknd.site/ca/en/faqs.html",
+        "https://wknd.site/us/en/faqs.html"
       ],
-      "coverageGaps": [],
       "description": "FAQ page with a hero banner and an accordion of question-and-answer items",
       "blocks": [
         {
@@ -162,7 +150,15 @@
           "instances": [
             "div.accordion.panelcontainer",
             ".cmp-accordion"
-          ]
+          ],
+          "pageInstances": {
+            "https://wknd.site/ca/en/faqs.html": [
+              "#container-1b01500a52 > div > div.accordion.panelcontainer.aem-GridColumn--tablet--12.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--8.aem-GridColumn--offset--phone--0"
+            ],
+            "https://wknd.site/us/en/faqs.html": [
+              "#container-0e3ddb0dd6 > div > div.accordion.panelcontainer.aem-GridColumn--tablet--12.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--8.aem-GridColumn--offset--phone--0"
+            ]
+          }
         }
       ],
       "sections": [
@@ -172,7 +168,7 @@
           "selector": [
             "div.container.responsivegrid.aem-GridColumn--default--8"
           ],
-          "style": null,
+          "style": "article",
           "blocks": [
             "hero-image-only",
             "accordion"
@@ -188,7 +184,7 @@
           "selector": [
             "div.container.responsivegrid.aem-GridColumn--default--3"
           ],
-          "style": null,
+          "style": "sidebar",
           "blocks": [],
           "defaultContent": [
             "div.container.responsivegrid.aem-GridColumn--default--3"
@@ -211,7 +207,6 @@
         "https://wknd.site/us/en.html",
         "https://wknd.site/us/es.html"
       ],
-      "coverageGaps": [],
       "description": "Locale homepage with full-width hero carousel, card grids and stacked teaser sections",
       "blocks": []
     },
@@ -231,8 +226,156 @@
         "https://wknd.site/us/en/magazine/ski-touring.html",
         "https://wknd.site/us/en/magazine/western-australia.html"
       ],
-      "coverageGaps": [],
-      "description": "Long-form article with hero image, breadcrumbs, pull quotes and inline images in the body",
+      "description": "Long-form article with hero image, breadcrumbs, author byline, pull quotes and inline images in the body",
+      "blocks": [
+        {
+          "name": "hero-image-only",
+          "instances": [
+            "main.cmp-layout-container--fixed > div.cmp-container > div.aem-Grid > div.image"
+          ]
+        },
+        {
+          "name": "breadcrumbs",
+          "instances": [
+            "main.cmp-layout-container--fixed > div.cmp-container > div.aem-Grid > div.breadcrumb"
+          ]
+        },
+        {
+          "name": "quote",
+          "instances": [
+            "article.contentfragment div.text.cmp-text--quote"
+          ],
+          "pageInstances": {
+            "https://wknd.site/ca/en/magazine/guide-la-skateparks.html": [
+              "#contentfragment-c33562458a > div > div:nth-child(2) > div:nth-child(2) > div > div.text.cmp-text--quote.aem-GridColumn.aem-GridColumn--default--12"
+            ],
+            "https://wknd.site/ca/en/magazine/members-only/alaskan-adventure.html": [
+              "#contentfragment-da62ddbb66 > div > div:nth-child(2) > div:nth-child(6)"
+            ],
+            "https://wknd.site/ca/en/magazine/ski-touring.html": [
+              "#contentfragment-b066f43096 > div > div:nth-child(2) > div:nth-child(2) > div > div.text.cmp-text--quote.aem-GridColumn.aem-GridColumn--default--12"
+            ],
+            "https://wknd.site/ca/en/magazine/western-australia.html": [
+              "#contentfragment-210d8d3282 > div > div:nth-child(2) > div:nth-child(2)"
+            ],
+            "https://wknd.site/us/en/magazine/guide-la-skateparks.html": [
+              "#contentfragment-1dac24729b > div > div:nth-child(2) > div:nth-child(2) > div > div.text.cmp-text--quote.aem-GridColumn.aem-GridColumn--default--12"
+            ],
+            "https://wknd.site/us/en/magazine/ski-touring.html": [
+              "#contentfragment-906f1eecc2 > div > div:nth-child(2) > div:nth-child(2) > div > div.text.cmp-text--quote.aem-GridColumn.aem-GridColumn--default--12"
+            ],
+            "https://wknd.site/us/en/magazine/western-australia.html": [
+              "#contentfragment-9fa4745cf6 > div > div:nth-child(2) > div:nth-child(2)"
+            ]
+          }
+        },
+        {
+          "name": "profile",
+          "instances": [
+            "main.cmp-layout-container--fixed main.container > div.cmp-container > div.experiencefragment"
+          ],
+          "pageInstances": {
+            "https://wknd.site/ca/en/magazine/arctic-surfing.html": [
+              "#container-3cf9457313 > div.experiencefragment"
+            ],
+            "https://wknd.site/ca/en/magazine/guide-la-skateparks.html": [
+              "#container-6720009e64 > div.experiencefragment"
+            ],
+            "https://wknd.site/ca/en/magazine/members-only/alaskan-adventure.html": [
+              "#container-ee62c0dd17 > div.experiencefragment"
+            ],
+            "https://wknd.site/ca/en/magazine/members-only/fly-fishing-the-amazon.html": [
+              "#container-9d49132d6f > div.experiencefragment"
+            ],
+            "https://wknd.site/ca/en/magazine/san-diego-surf.html": [
+              "#container-66ceb663d3 > div.experiencefragment"
+            ],
+            "https://wknd.site/ca/en/magazine/ski-touring.html": [
+              "#container-5dfaba72e4 > div.experiencefragment"
+            ],
+            "https://wknd.site/ca/en/magazine/western-australia.html": [
+              "#container-0a536d9395 > div.experiencefragment"
+            ],
+            "https://wknd.site/us/en/magazine/arctic-surfing.html": [
+              "#container-641a40404e > div.experiencefragment"
+            ],
+            "https://wknd.site/us/en/magazine/guide-la-skateparks.html": [
+              "#container-a7678c5eec > div.experiencefragment"
+            ],
+            "https://wknd.site/us/en/magazine/san-diego-surf.html": [
+              "#container-fca115ba19 > div.experiencefragment"
+            ],
+            "https://wknd.site/us/en/magazine/ski-touring.html": [
+              "#container-2a69b0225c > div.experiencefragment"
+            ],
+            "https://wknd.site/us/en/magazine/western-australia.html": [
+              "#container-fc6c2f500a > div.experiencefragment"
+            ]
+          }
+        }
+      ],
+      "sections": [
+        {
+          "id": "article-hero",
+          "name": "article-hero",
+          "selector": [
+            "main.cmp-layout-container--fixed > div.cmp-container > div.aem-Grid > div.image"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-image-only"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "article-breadcrumbs",
+          "name": "article-breadcrumbs",
+          "selector": [
+            "main.cmp-layout-container--fixed > div.cmp-container > div.aem-Grid > div.breadcrumb"
+          ],
+          "style": null,
+          "blocks": [
+            "breadcrumbs"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "article-body",
+          "name": "article-body",
+          "selector": [
+            "main.cmp-layout-container--fixed main.container > div.cmp-container"
+          ],
+          "style": "article",
+          "blocks": [
+            "quote",
+            "profile"
+          ],
+          "defaultContent": [
+            "main.cmp-layout-container--fixed main.container > div.cmp-container > div.title",
+            "main.cmp-layout-container--fixed main.container > div.cmp-container > article.contentfragment"
+          ]
+        },
+        {
+          "id": "article-sidebar",
+          "name": "article-sidebar",
+          "selector": [
+            "aside.cmp-layoutcontainer--sidebar"
+          ],
+          "style": "sidebar",
+          "blocks": [],
+          "defaultContent": [
+            "aside.cmp-layoutcontainer--sidebar div.download",
+            "aside.cmp-layoutcontainer--sidebar div.list"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "search-page",
+      "urls": [
+        "https://wknd.site/us/en/ai-powered-search.html"
+      ],
+      "description": "Utility page holding a single search form with results below it",
       "blocks": []
     }
   ],

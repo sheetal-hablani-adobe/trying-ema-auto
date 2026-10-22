@@ -6,6 +6,9 @@
  * Uses payload.template.sections: inserts <hr> section breaks in
  * beforeTransform (while parser target elements still exist) and
  * Section Metadata blocks for styled sections in afterTransform.
+ * Template-agnostic: serves detail-page, faq and article (article-hero,
+ * article-breadcrumbs, article-body, article-sidebar; all unstyled, so
+ * only <hr> breaks are produced).
  */
 const MARKER = 'data-excat-section-id';
 

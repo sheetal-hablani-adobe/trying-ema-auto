@@ -1,9 +1,24 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 const NETWORKS = ['facebook', 'twitter', 'x', 'instagram', 'linkedin', 'youtube', 'pinterest', 'tiktok'];
+const ALIASES = {
+  fb: 'facebook', insta: 'instagram', ig: 'instagram', yt: 'youtube',
+};
+
+/**
+ * Maps a word (from link text or a hash href) to a known network, or null.
+ * @param {string} word
+ * @returns {string|null}
+ */
+function toNetwork(word) {
+  if (ALIASES[word]) return ALIASES[word];
+  return NETWORKS.includes(word) ? word : null;
+}
 
 /**
  * Returns the social network a link points to, or null.
+ * Checks the link host first, then (for placeholder links such as `#insta-name`)
+ * the hash, then the visible link text (e.g. "Facebook").
  * @param {HTMLAnchorElement} a
  * @returns {string|null}
  */
@@ -15,7 +30,20 @@ function getNetwork(a) {
     return null;
   }
   const match = NETWORKS.find((n) => host === `${n}.com` || host.endsWith(`.${n}.com`));
-  return match || null;
+  if (match) return match;
+
+  const href = a.getAttribute('href') || '';
+  const hints = [
+    href.startsWith('#') ? href.slice(1) : '',
+    a.textContent,
+  ];
+  let found = null;
+  hints.some((hint) => {
+    const words = hint.toLowerCase().split(/[^a-z]+/).filter(Boolean);
+    found = words.map(toNetwork).find(Boolean) || null;
+    return found;
+  });
+  return found;
 }
 
 /**

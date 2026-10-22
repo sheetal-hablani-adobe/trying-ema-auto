@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "url": "https://wknd.site/us/en/magazine/ski-touring.html",
+  "path": "us/en/magazine/ski-touring",
+  "timestamp": "2026-10-22T06:21:12.996Z",
+  "title": "Ski Touring",
+  "template": "article",
+  "blocks": [
+    "quote",
+    "hero-image-only",
+    "breadcrumbs"
+  ],
+  "fragments": [
+    "fragments/contributors/sofia-sjoeberg"
+  ],
+  "importScript": "c97f852b23aa"
+}

@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "url": "https://wknd.site/us/en/magazine/guide-la-skateparks.html",
+  "path": "us/en/magazine/guide-la-skateparks",
+  "timestamp": "2026-10-22T06:21:02.770Z",
+  "title": "Ultimate Guide to LA Skateparks",
+  "template": "article",
+  "blocks": [
+    "quote",
+    "hero-image-only",
+    "breadcrumbs"
+  ],
+  "fragments": [
+    "fragments/contributors/stacey-roswells"
+  ],
+  "importScript": "c97f852b23aa"
+}

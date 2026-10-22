@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://wknd.site/us/en/faqs.html",
+  "path": "us/en/faqs",
+  "timestamp": "2026-10-22T06:21:32.237Z",
+  "title": "FAQs",
+  "template": "faq",
+  "blocks": [
+    "accordion",
+    "hero-image-only"
+  ],
+  "fragments": [],
+  "importScript": "c96a1baeb0ec"
+}

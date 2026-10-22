@@ -1,33 +1,69 @@
+/* Breadcrumbs: values from wknd.site .cmp-breadcrumb computed styles.
+   The source nav is inline-block in the 18px/27px body line box, which offsets it vertically */
+.breadcrumbs nav {
+  display: inline-block;
+}
+
 .breadcrumbs .breadcrumbs-list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5em 1em;
   margin: 0;
-  padding: 0;
+  padding: 0 12px 0 0;
   list-style: none;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--text-color);
+}
+
+/* below a hero (magazine article), the source list carries top spacing */
+main > .section:not(:first-child) .breadcrumbs .breadcrumbs-list {
+  padding-top: 12px;
 }
 
 .breadcrumbs .breadcrumbs-item {
-  display: flex;
-  align-items: center;
-  gap: 1em;
+  display: inline-block;
+  padding: 10px 5px;
+  text-transform: uppercase;
+  vertical-align: top;
 }
 
+/* source items are separated by a collapsed whitespace (0.2em) */
+.breadcrumbs .breadcrumbs-item + .breadcrumbs-item {
+  margin-left: 0.2em;
+}
+
+.breadcrumbs .breadcrumbs-item:first-child {
+  padding-left: 0;
+}
+
+/* separator: yellow right-pointing triangle (source wknd-icon-font glyph U+EA1C, 1em advance) */
 .breadcrumbs .breadcrumbs-item + .breadcrumbs-item::before {
   content: '';
   display: inline-block;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0.35em 0 0.35em 0.6em;
-  border-color: transparent transparent transparent currentcolor;
+  width: 0.571em;
+  height: 0.714em;
+  margin: 0 calc(0.414em + 5px) 0.143em 0.214em;
+  background-color: var(--accent-color);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
 
-.breadcrumbs .breadcrumbs-item a {
+.breadcrumbs .breadcrumbs-item a:any-link {
+  color: var(--text-color);
+  font-weight: 600;
   text-decoration: none;
 }
 
 .breadcrumbs .breadcrumbs-item [aria-current='page'] {
-  font-weight: normal;
+  font-weight: 400;
+}
+
+@media (width >= 600px) {
+  .breadcrumbs .breadcrumbs-list {
+    font-size: var(--body-font-size-xs);
+    line-height: 21px;
+  }
+}
+
+@media (width >= 1200px) {
+  main > .section:not(:first-child) .breadcrumbs .breadcrumbs-list {
+    margin-top: 14px;
+  }
 }

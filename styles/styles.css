@@ -1,3 +1,5 @@
+@import url('brand.css');
+
 /*
  * Copyright 2020 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
@@ -10,66 +12,16 @@
  * governing permissions and limitations under the License.
  */
 
+/* brand tokens (colors, fonts, sizes) live in brand.css */
 :root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
-
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
-
-  /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
-
-  /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
-
   /* nav height: 25px utility bar + 92px main bar */
   --nav-height: 117px;
-}
-
-/* fallback fonts */
-@font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
-  src: local('Arial');
-}
-
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
 }
 
 @media (width >= 900px) {
   :root {
     /* nav height: 25px utility bar + 169px main bar */
     --nav-height: 194px;
-
-    /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
-
-    /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
   }
 }
 
@@ -80,7 +32,7 @@ body {
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  line-height: var(--body-line-height);
 }
 
 body.appear {
@@ -137,17 +89,50 @@ h6 {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 400;
+  line-height: 1.5;
   scroll-margin: 40px;
 }
 
+/* h1-h2: Asar display; h3-h6: uppercase Source Sans labels (as on the source) */
+h1,
+h2 {
+  margin: 27px 0 13.5px;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--body-font-family);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
 h1 { font-size: var(--heading-font-size-xxl); }
 h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
+
+h3 {
+  margin: 7px 0 0;
+  font-size: var(--heading-font-size-l);
+}
+
+h4 {
+  margin: 21px 0;
+  font-size: var(--heading-font-size-m);
+}
+
+h5 {
+  margin: 23px 0;
+  font-size: var(--heading-font-size-s);
+}
+
+h6 {
+  margin: 23px 0;
+  font-size: var(--heading-font-size-xs);
+}
+
 
 p,
 dl,
@@ -176,6 +161,18 @@ main > div {
   margin: 40px 16px;
 }
 
+main p {
+  margin: 0 0 13.5px;
+}
+
+/* section headings carry the WKND yellow underline accent */
+main .default-content-wrapper h2::after {
+  content: '';
+  display: block;
+  width: 84px;
+  border-bottom: 2px solid var(--accent-color);
+}
+
 input,
 textarea,
 select,
@@ -194,6 +191,7 @@ a:hover {
   color: var(--link-hover-color);
   text-decoration: underline;
 }
+
 
 /* buttons */
 p.button-wrapper {
@@ -308,6 +306,24 @@ button.button.accent:disabled:focus-visible {
   color: var(--dark-color);
 }
 
+/* EDS auto-buttons render as plain links unless a block styles them */
+main .button-container {
+  display: inline;
+}
+
+main a.button:any-link {
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: var(--link-color);
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0;
+  margin: 0;
+  text-decoration: underline;
+  white-space: normal;
+}
+
 main img {
   max-width: 100%;
   width: auto;
@@ -326,23 +342,25 @@ main img {
 }
 
 /* sections */
+
+/* the source spaces content with element margins, not section gaps */
 main > .section {
-  margin: 40px 0;
+  margin: 0;
 }
 
 main > .section > div {
-  max-width: 1200px;
+  max-width: var(--content-max-width);
   margin: auto;
-  padding: 0 24px;
+  padding: 0 var(--content-gutter);
 }
 
 main > .section:first-of-type {
   margin-top: 0;
 }
 
-@media (width >= 900px) {
+@media (width >= 1200px) {
   main > .section > div {
-    padding: 0 32px;
+    padding: 0;
   }
 }
 
@@ -375,4 +393,199 @@ main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
+}
+
+/* article and sidebar rules target different sections, so their order does not matter */
+/* stylelint-disable no-descending-specificity */
+
+/* article: body copy and a sidebar (download, up-next list) beside it on desktop */
+main > .section.article h1 {
+  margin-top: 27px;
+}
+
+main > .section.article h1 + h4 {
+  margin: 21px 0;
+}
+
+main > .section.article p {
+  line-height: 2.5;
+}
+
+main > .section.article .default-content-wrapper > p {
+  text-align: justify;
+}
+
+/* section headings and inline images sit 14px inside the article column */
+main > .section.article .default-content-wrapper > h2 {
+  padding: 0 14px;
+}
+
+/* the source's inline image keeps 7px above and below (padding: margins would collapse) */
+main > .section.article .default-content-wrapper > p > picture:only-child {
+  display: block;
+  padding: 7px 14px;
+}
+
+main > .section.article .default-content-wrapper > p > picture:only-child img {
+  display: block;
+  width: 100%;
+}
+
+
+/* plain sidebar headings and copy (e.g. FAQ "Need more help?") */
+main > .section.sidebar h3 {
+  margin: 18px 0 13.5px;
+  font-family: var(--heading-font-family);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  text-transform: none;
+}
+
+main > .section.sidebar p {
+  margin: 0 0 13.5px;
+  font-size: var(--body-font-size-xs);
+  line-height: 35px;
+}
+
+main > .section.sidebar ul {
+  margin: 18px 0;
+  padding: 0 14px;
+  list-style: none;
+}
+
+main > .section.sidebar li {
+  margin: 0 0 18px;
+}
+
+main > .section.sidebar li a:any-link {
+  display: block;
+  padding: 8px 16px;
+  min-height: 120px;
+  border-left: 5px solid var(--light-color);
+  color: var(--text-color);
+  text-transform: uppercase;
+}
+
+/* up-next item: title, then the date on its own line */
+main > .section.sidebar li a em {
+  display: block;
+  padding: 5px 0;
+  color: var(--muted-color);
+  font-size: 12px;
+  font-style: normal;
+  line-height: 18px;
+}
+
+/* download box: a heading holding the file link */
+main > .section.sidebar h3:has(> a) {
+  margin: 7px 0 0;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-xs);
+  font-weight: 600;
+  line-height: 21px;
+  text-transform: uppercase;
+}
+
+main > .section.sidebar h3:has(> a) a:any-link {
+  color: var(--text-color);
+}
+
+main > .section.sidebar h3:has(> a) + p {
+  font-size: var(--body-font-size-s);
+  font-weight: 600;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+
+/* download file properties (filename, size, format) */
+main > .section.sidebar h3:has(> a) ~ p {
+  margin: 0;
+}
+
+main > .section.sidebar h3:has(> a) + p ~ p:not(:has(> a:only-child)) {
+  color: var(--muted-color);
+  font-size: 12px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+/* download action: the paragraph holding only the file link */
+main > .section.sidebar h3:has(> a) + p ~ p:has(> a:only-child) {
+  margin: 30px 0 50px;
+}
+
+main > .section.sidebar h3:has(> a) + p ~ p > a:only-child:any-link {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--dark-color);
+  color: var(--background-color);
+  font-size: var(--body-font-size-m);
+  line-height: 18px;
+  text-decoration: none;
+}
+
+main > .section.sidebar h3:has(> a) + p ~ p > a:only-child:hover {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+/* plain pull quotes authored as default content */
+main > .section.article .default-content-wrapper > blockquote {
+  margin: 18px 54px;
+}
+
+main > .section.article .default-content-wrapper > blockquote p {
+  margin: 0;
+  line-height: 27px;
+}
+
+/* FAQ: the title and intro are inset like the banner, and the title is underlined */
+main > .section.article:has(.accordion) h1,
+main > .section.article:has(.accordion) .default-content-wrapper > p {
+  padding: 0 14px;
+}
+
+main > .section.article:has(.accordion) h1::after {
+  content: '';
+  display: block;
+  margin-top: 8px;
+  width: 84px;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+/* stylelint-enable no-descending-specificity */
+
+@media (width >= 900px) {
+  main:has(> .section.sidebar) {
+    display: grid;
+    grid-template-columns:
+      [full-start] minmax(var(--content-gutter), 1fr)
+      [body-start] minmax(0, 776px) [body-end]
+      minmax(32px, 97px)
+      [side-start] minmax(0, 291px) [side-end]
+      minmax(var(--content-gutter), 1fr) [full-end];
+    grid-auto-flow: row dense;
+    align-items: start;
+  }
+
+  main:has(> .section.sidebar) > .section {
+    grid-column: full;
+    margin: 0;
+  }
+
+  main:has(> .section.sidebar) > .section.article {
+    grid-column: body;
+  }
+
+  main:has(> .section.sidebar) > .section.sidebar {
+    grid-column: side;
+    padding-top: 27px;
+  }
+
+  main:has(> .section.sidebar) > .section.article > div,
+  main:has(> .section.sidebar) > .section.sidebar > div {
+    max-width: none;
+    padding: 0;
+  }
 }

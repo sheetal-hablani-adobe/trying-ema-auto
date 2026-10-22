@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "url": "https://wknd.site/ca/en/magazine/members-only/alaskan-adventure.html",
+  "path": "ca/en/magazine/members-only/alaskan-adventure",
+  "timestamp": "2026-10-22T06:20:31.008Z",
+  "title": "Alaskan Adventure",
+  "template": "article",
+  "blocks": [
+    "quote",
+    "hero-image-only",
+    "breadcrumbs"
+  ],
+  "fragments": [
+    "fragments/contributors/ian-provo"
+  ],
+  "importScript": "c97f852b23aa"
+}

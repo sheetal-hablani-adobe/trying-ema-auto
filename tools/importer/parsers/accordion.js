@@ -13,7 +13,8 @@
  *   Panels are only collapsed via a CSS class; their content is in the markup and
  *   is read regardless of visibility.
  *
- * Target (2 columns, one row per item): question (plain text) | answer content.
+ * Target (2 columns, one row per item): question (<h3>, matching the source
+ * h3.cmp-accordion__header) | answer content.
  *
  * Both template selectors (`div.accordion.panelcontainer` and the nested
  * `.cmp-accordion`) resolve here. The outer wrapper is always the one replaced;
@@ -82,7 +83,12 @@ export default function parse(element, { document }) {
     const panel = item.querySelector(':scope > .cmp-accordion__panel');
     const answer = panel ? answerContent(panel, document) : [];
     if (!question && !answer.length) return;
-    cells.push([question, answer]);
+    let questionCell = '';
+    if (question) {
+      questionCell = document.createElement('h3');
+      questionCell.textContent = question;
+    }
+    cells.push([questionCell, answer]);
   });
 
   if (!cells.length) return;

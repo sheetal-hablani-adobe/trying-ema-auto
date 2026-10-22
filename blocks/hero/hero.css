@@ -54,16 +54,28 @@
   }
 }
 
-/* image-only: plain content-width image banner, no overlay */
-.hero-container .hero-wrapper:has(.hero.image-only) {
-  max-width: 1200px;
-  padding: 0 24px;
+/* image-only: plain content-width image banner, no overlay.
+   Mirrors the source 1164px grid column (14px side padding, 1136px image). */
+.hero.image-only {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 var(--content-gutter);
+}
+
+/* source img is inline with margin 7px 0 plus a 7px baseline gap (723px on a
+   702px image). flow-root keeps the img top margin inside the block instead of
+   collapsing out through picture/.hero-image. */
+.hero.image-only .hero-image {
+  display: flow-root;
+  padding-bottom: 7px;
 }
 
 .hero.image-only .hero-image img {
   min-height: 0;
   max-height: none;
   height: auto;
+  margin: 7px 0;
+  object-fit: fill;
 }
 
 .hero.image-only .hero-content {
@@ -72,10 +84,4 @@
   margin: 16px 0 0;
   padding: 0;
   background-color: transparent;
-}
-
-@media (width >= 900px) {
-  .hero-container .hero-wrapper:has(.hero.image-only) {
-    padding: 0 32px;
-  }
 }

@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "https://wknd.site/ca/en/magazine/arctic-surfing.html",
+  "path": "ca/en/magazine/arctic-surfing",
+  "timestamp": "2026-10-22T06:20:19.425Z",
+  "title": "Arctic Surfing",
+  "template": "article",
+  "blocks": [
+    "hero-image-only",
+    "breadcrumbs"
+  ],
+  "fragments": [
+    "fragments/contributors/jacob-wester"
+  ],
+  "importScript": "c97f852b23aa"
+}

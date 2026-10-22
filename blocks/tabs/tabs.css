@@ -1,35 +1,61 @@
+/* tab list (shared by default and card-grid): WKND cmp-tabs__tablist */
 .tabs .tabs-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 0;
   max-width: 100%;
-  overflow-x: auto;
+  margin: 18px 0;
+  padding: 0;
 }
 
 .tabs .tabs-list button {
-  flex: 0 0 max-content;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  min-width: 48px;
+  max-height: 48px;
   margin: 0;
-  padding: 0.5em 1em;
+  padding: 8px 16px;
   border: 0;
+  border-bottom: 1px solid transparent;
   border-radius: 0;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  line-height: unset;
-  text-align: initial;
+  background-color: transparent;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-xs);
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+  text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
 }
 
 .tabs .tabs-list button p {
   margin: 0;
+  font: inherit;
+  line-height: inherit;
+}
+
+.tabs .tabs-list button:focus {
+  outline: none;
+}
+
+.tabs .tabs-list button:focus-visible {
+  outline: 1px solid var(--text-color);
+  outline-offset: -1px;
 }
 
 .tabs .tabs-list button[aria-selected='true'] {
-  cursor: default;
+  border-bottom-color: var(--text-color);
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.tabs .tabs-list button[aria-selected='true']:focus-visible {
+  outline-color: var(--background-color);
 }
 
 .tabs .tabs-panel {
-  padding-top: 1em;
   overflow: auto;
 }
 
@@ -39,6 +65,7 @@
 
 .tabs .tabs-panel img {
   display: block;
+  width: 100%;
   max-width: 100%;
   height: auto;
 }
@@ -76,6 +103,53 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* default: rich-text panels (WKND content fragment typography) */
+.tabs:not(.card-grid) .tabs-panel-content {
+  color: var(--text-color);
+  font-size: var(--body-font-size-m);
+  line-height: 27px;
+}
+
+.tabs:not(.card-grid) .tabs-panel-content p {
+  margin: 0 0 13.5px;
+  line-height: 45px;
+  text-align: justify;
+}
+
+.tabs:not(.card-grid) .tabs-panel-content p:has(> picture) {
+  display: flow-root;
+  line-height: 0;
+}
+
+.tabs:not(.card-grid) .tabs-panel-content p > picture img {
+  margin: 7px 0 0;
+}
+
+.tabs:not(.card-grid) .tabs-panel-content ul {
+  margin: 18px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tabs:not(.card-grid) .tabs-panel-content li {
+  padding-left: 12px;
+  line-height: 36px;
+}
+
+/* source bullet: wknd-icon-font right-pointing triangle at 0.55em, nudged left -0.75em / up -0.25em */
+.tabs:not(.card-grid) .tabs-panel-content li::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  top: -0.25em;
+  left: -0.75em;
+  width: 1em;
+  height: 0.7em;
+  font-size: 0.55em;
+  background-color: currentcolor;
+  clip-path: polygon(0 0, 65% 50%, 0 100%);
 }
 
 @media (width >= 900px) {

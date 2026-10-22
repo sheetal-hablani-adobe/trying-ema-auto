@@ -131,6 +131,9 @@ export default function decorate(block) {
   const rows = [...block.querySelectorAll(':scope > div')]
     .filter((row) => row.textContent.trim() || row.querySelector('picture, img'));
   const isSingleSlide = rows.length < 2;
+  // the default (mini) carousel keeps its indicator and arrows even with one slide, as on the
+  // source; the hero option drops them when there is nothing to page through
+  const showControls = !isSingleSlide || !isHero;
 
   const container = document.createElement('div');
   container.className = 'carousel-slides-container';
@@ -141,7 +144,7 @@ export default function decorate(block) {
   controls.className = 'carousel-controls';
 
   let indicators;
-  if (!isSingleSlide) {
+  if (showControls) {
     const indicatorsNav = document.createElement('nav');
     indicatorsNav.setAttribute('aria-label', LABELS.controls);
     indicators = document.createElement('ol');
@@ -170,7 +173,7 @@ export default function decorate(block) {
 
   container.append(slidesWrapper);
   block.replaceChildren(container);
-  if (!isSingleSlide) {
+  if (showControls) {
     block.append(controls);
     updateActiveSlide(block, 0);
     bindEvents(block);

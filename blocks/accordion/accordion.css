@@ -1,10 +1,22 @@
+/* Block: accordion -- values from wknd.site .cmp-accordion computed styles */
+
 .accordion details {
-  border-bottom: 1px solid currentcolor;
+  margin: 0;
+  padding: 0;
 }
 
+/* item header (source: .cmp-accordion__button) */
 .accordion details summary {
+  display: block;
   position: relative;
-  padding: 0.75em 3em 0.75em 0;
+  padding: 13.333px 47.333px 13.333px 21.333px;
+  border-bottom: 2px solid var(--light-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  color: rgb(0 0 0);
   list-style: none;
   cursor: pointer;
 }
@@ -13,36 +25,89 @@
   display: none;
 }
 
-.accordion details summary > :first-child {
-  margin-top: 0;
+.accordion details summary:focus {
+  outline: none;
 }
 
-.accordion details summary > :last-child {
-  margin-bottom: 0;
+.accordion details summary:focus-visible {
+  outline: 2px solid currentcolor;
+  outline-offset: -2px;
 }
 
-/* plus / minus indicator */
+/* expanded header drops its divider (source: .cmp-accordion__button--expanded) */
+.accordion details[open] summary {
+  border-bottom: 0;
+}
+
+/* question (source: .cmp-accordion__title); beats the article section p line-height */
+main .accordion details summary.accordion-item-label > * {
+  margin: 0;
+  font: inherit;
+  text-transform: inherit;
+  color: inherit;
+}
+
+/* plus / minus indicator (source: wknd-icon-font glyphs, 21 x 20px, 2px strokes) */
 .accordion details summary::before,
 .accordion details summary::after {
   content: '';
   position: absolute;
   top: 50%;
-  right: 0.5em;
-  width: 1em;
-  height: 2px;
   background-color: currentcolor;
   transform: translateY(-50%);
-  transition: transform 0.2s;
+}
+
+.accordion details summary::before {
+  right: 13.333px;
+  width: 21px;
+  height: 2px;
 }
 
 .accordion details summary::after {
-  transform: translateY(-50%) rotate(90deg);
+  right: 22.833px;
+  width: 2px;
+  height: 20px;
 }
 
 .accordion details[open] summary::after {
-  transform: translateY(-50%) rotate(0deg);
+  display: none;
 }
 
+/* answer panel (source: .cmp-accordion__panel) */
 .accordion details .accordion-item-body {
-  padding-bottom: 0.75em;
+  padding: 7px 0 0 7px;
+  font-size: var(--body-font-size-xs);
+  line-height: 1.75;
+  color: var(--text-color);
+  animation: accordion-fade-in 0.5s both;
+}
+
+main .accordion details .accordion-item-body p {
+  margin: 0 0 13.5px;
+  font-size: var(--body-font-size-xs);
+  line-height: 1.75;
+  text-align: justify;
+}
+
+@keyframes accordion-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion details .accordion-item-body {
+    animation: none;
+  }
+}
+
+/* the source grid column keeps a 14px gutter inside the 776px article column */
+@media (width >= 900px) {
+  .accordion {
+    padding: 0 14px;
+  }
 }

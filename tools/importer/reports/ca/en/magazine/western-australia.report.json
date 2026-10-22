@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "url": "https://wknd.site/ca/en/magazine/western-australia.html",
+  "path": "ca/en/magazine/western-australia",
+  "timestamp": "2026-10-22T06:20:53.401Z",
+  "title": "Western Australia",
+  "template": "article",
+  "blocks": [
+    "quote",
+    "hero-image-only",
+    "breadcrumbs"
+  ],
+  "fragments": [
+    "fragments/contributors/sofia-sjoeberg"
+  ],
+  "importScript": "c97f852b23aa"
+}
